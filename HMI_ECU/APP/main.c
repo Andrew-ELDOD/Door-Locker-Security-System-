@@ -45,7 +45,7 @@ void Door_Unlocked(void)
     DIO_WritePin(RGB_PORT, LED_BLUE, 1);
 }
 
-void BlinkBlue(uint8_t t)
+void BlinkRed(uint8_t t)
 {
     DIO_WritePin(RGB_PORT, LED_GREEN, 1);
     DIO_WritePin(RGB_PORT, LED_BLUE, 1);
@@ -128,7 +128,7 @@ uint8_t AuthenticateUser(void)
         tries++;
         LCD_I2C_Clear();
         LCD_I2C_WriteString("Wrong!");
-        BlinkBlue(tries);
+        BlinkRed(tries);
         delayms(1000);
     }
 
